@@ -9,10 +9,13 @@ app.set("view engine", "ejs");
 
 
 // parses the req.body
+app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
+const festivalsController = require("./controllers/festivalController")
+
 app.get("/", (req, res) => {
-    res.render("index")
+    festivalsController.getFestivals(req, res)
 })
 
 app.listen(4001, () => {

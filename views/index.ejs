@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/output.css">
+    <title>Moment</title>
+</head>
+<body>
+    <header>
+        <nav class="lg:h-20 lg:w-screen lg:flex lg: items-center lg:justify-around bg-zinc-900 text-orange-300 fixed z-10">
+            <ul class="lg:flex lg:justify-around lg:items-center lg:w-1/3 lg:h-20 ">
+                <a href="">Festivals</a>
+                <a href="">Home</a>
+                <a href="">Genres</a>
+            </ul>
+        </nav>
+        <section class="w-full h-screen">
+            <img src="/openart-c3614209ec04407e89803a2e1c853ae2_raw.jpg" class="object-fit" alt="">
+            
+        </section>
+
+    </header>
+    
+    <main class="flex flex-wrap px-32 py-24">
+        <% festivals.forEach((festival) => { %>
+            <figure class="lg:w-64 lg:h-80 mx-4 my-8">
+               <img class="lg:w-64 lg:h-80 lg: rounded-lg hover:transition ease-in hover:-translate-y-1 hover:scale-110 duration-300" src="<%= festival.image_url %>" alt="">
+                <p><%= festival.name %></p>
+                <p><%= festival.location  %></p>
+            </figure>
+       <% }) %>
+    </main>
+   
+</body>
+</html>

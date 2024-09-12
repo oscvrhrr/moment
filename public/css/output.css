@@ -917,6 +917,10 @@ video {
      object-fit: fill;
 }
 
+.p-20 {
+  padding: 5rem;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1005,6 +1009,10 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .text-center {
@@ -1197,6 +1205,10 @@ video {
     background-image: url('/openart-c3614209ec04407e89803a2e1c853ae2_raw.jpg');
   }
 
+  .lg\:p-20 {
+    padding: 5rem;
+  }
+
   .lg\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -1207,14 +1219,18 @@ video {
     padding-right: 8rem;
   }
 
+  .lg\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
   .lg\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
 
-  .lg\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+  .lg\:pb-20 {
+    padding-bottom: 5rem;
   }
 
   .lg\:text-7xl {

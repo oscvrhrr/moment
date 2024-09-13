@@ -7,7 +7,8 @@ async function getAllFestivals() {
 }
 
 async function getFestivalsAlphaSorted() {
-    const { rows } = await pool.query("SELECT * FROM festivals ORDER BY name ASC")
+    const { rows } = await pool.query("SELECT * FROM festivals ORDER BY name ASC");
+    return rows
 }   
 
 async function getFestivalById(id) {
@@ -27,8 +28,13 @@ async function getGenreById(id) {
     return rows
 }
 
+async function insertNewFest(name, location, date) {
+    await pool.query("INSERT INTO festivals (name, location, start_date) VALUES($1, $2, $3)", [name, location, date])
+}
+
 
 module.exports = {
+    insertNewFest,
     getAllFestivals,
     getFestivalsAlphaSorted,
     getFestivalById,

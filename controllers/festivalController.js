@@ -18,20 +18,30 @@ async function getFestivalById(req, res) {
 
 async function getGenres(req, res) {
     const genres = await db.getAllGenres();
-    console.log(genres)
     res.render("genres", { genres });
 }
 
 async function createGetGenreId(req, res) {
-    const id  = req.params.id;
+    const id  = req.params.genreID;
     const festivalsByGenre = await db.getGenreById(id);
-    console.log(festivalsByGenre)
     res.render("festivalsByGenre", { festivalsByGenre });
+}
+
+async function getFestForm(req, res) {
+    res.render("addFestForm")
+}
+
+async function sendFestData(req, res) {
+    const { name, location, date} = req.body;
+    await db.insertNewFest(name, location, date);
+    res.redirect("/");
 }
 
 
 
 module.exports = {
+    sendFestData,
+    getFestForm,
     getFestivals,
     getSortedFestivals,
     getFestivalById,

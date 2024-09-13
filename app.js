@@ -4,8 +4,12 @@ const app = express();
 const path = require("node:path");
 
 const genresRouter = require("./routes/genresRouter")
+const indexRouter = require("./routes/indexRouter");
 
-const festivalsController = require("./controllers/festivalController")
+
+const festivalsController = require("./controllers/festivalController");
+
+
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -14,19 +18,24 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
-app.use("/genres", genresRouter );
+
 
 app.get("/festivals", (req, res) => {
     festivalsController.getSortedFestivals(req,res)
 });
 
-app.get("/", (req, res) => {
-    festivalsController.getFestivals(req, res)
+app.get("/festform", (req, res) => {
+    festivalsController.getFestForm(req, res);
 });
 
-app.get("/:id", (req, res) => {
-    festivalsController.getFestivalById(req, res)
-})
+app.post("/festform", (req, res) => {
+    festivalsController.sendFestData(req, res)
+})  
+
+
+
+app.use("/genres", genresRouter );
+app.use("/", indexRouter);
 
 
 

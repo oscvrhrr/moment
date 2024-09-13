@@ -14,12 +14,20 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
+app.use("/genres", genresRouter );
+
+app.get("/festivals", (req, res) => {
+    festivalsController.getSortedFestivals(req,res)
+});
 
 app.get("/", (req, res) => {
     festivalsController.getFestivals(req, res)
 });
 
-app.use("/genres", genresRouter );
+app.get("/:id", (req, res) => {
+    festivalsController.getFestivalById(req, res)
+})
+
 
 
 

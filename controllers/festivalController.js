@@ -5,6 +5,17 @@ async function getFestivals(req, res) {
     res.render("index", { festivals });
 }
 
+async function getSortedFestivals(req, res) {
+    const sortedFest = await db.getFestivalsAlphaSorted();
+    res.render("festivals", { sortedFest });
+}
+
+async function getFestivalById(req, res) {
+    const id = req.params.id;
+    const festival = await db.getFestivalById(id);
+    res.render("festivalDetails", { festival });
+}
+
 async function getGenres(req, res) {
     const genres = await db.getAllGenres();
     console.log(genres)
@@ -22,6 +33,8 @@ async function createGetGenreId(req, res) {
 
 module.exports = {
     getFestivals,
+    getSortedFestivals,
+    getFestivalById,
     getGenres,
     createGetGenreId
 }

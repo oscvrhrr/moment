@@ -2,8 +2,18 @@ const { get } = require("../routes/genresRouter");
 const pool = require("./pool");
 
 async function getAllFestivals() {
-    const { rows } = await pool.query("SELECT * FROM festivals");
+    const { rows } = await pool.query("SELECT * FROM festivals LIMIT 12");
     return rows;
+}
+
+async function getFestivalsAlphaSorted() {
+    const { rows } = await pool.query("SELECT * FROM festivals ORDER BY name ASC")
+}   
+
+async function getFestivalById(id) {
+    const { rows } = await pool.query("SELECT * FROM festivals WHERE id = $1", [id]);
+    console.log(rows)
+    return rows
 }
 
 async function getAllGenres() {
@@ -20,6 +30,8 @@ async function getGenreById(id) {
 
 module.exports = {
     getAllFestivals,
+    getFestivalsAlphaSorted,
+    getFestivalById,
     getAllGenres,
     getGenreById
 }

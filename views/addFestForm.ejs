@@ -21,12 +21,30 @@
             <h3 class="lg:text-center lg:text-2xl">Add a festival</h3>
             <div class="lg:flex lg:flex-col">
                 <label for="name">Festival</label>
-                <input class="border rounded" type="text" name="name" id="name">
+                <input class="border rounded" type="text" name="name" id="name" required>
                 <label for="location">Location</label>
-                <input class="border rounded" type="text" name="location" id="name">
+                <input class="border rounded" type="text" name="location" id="name" required>
                 <label for="date">Date</label>
-                <input class="border rounded" type="text" name="date" id="date">
-                <button class="bg-orange-300 rounded">SUBMIT</button>
+                <input class="border rounded" type="text" name="date" id="date" required>
+                <label for="genre_id">Genre</label>
+                <select class="rounded border" name="genre_id" id="genre_id" required>
+                    <option  value="1">Rock</option>
+                    <option  value="2">Pop</option>
+                    <option  value="3">Hip-Hop / Rap</option>
+                    <option  value="4">Electronic / EDM</option>
+                    <option  value="5">R&B / Soul</option>
+                    <option  value="6">Jazz</option>
+                    <option  value="7">Reggae</option>
+                    <option  value="8">Country</option>
+                    <option  value="9">Indie / Alternative</option>
+                    <option  value="10">Latin</option>
+                    <option  value="11">K-Pop</option>
+                    <option  value="12">Metal</option>
+                    <option  value="13" selected>Multi-genre</option>
+                </select>
+                <label for="image_url">URL for image</label>
+                <input class="border rounded" type="" name="image_url" id="image_url">
+                <button class="bg-orange-300 rounded mt-4">SUBMIT</button>
             </div>
         </form>
     </main>

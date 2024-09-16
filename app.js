@@ -17,7 +17,16 @@ app.set("view engine", "ejs");
 // parses the req.body
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
+app.get('/favicon.ico', (req, res) => res.status(204));
 
+
+app.post("/:festId/updateItem/new", (req, res) => {
+    festivalsController.sendUpdFest(req, res);
+});
+
+app.get("/:festId/updateItem", (req, res) => {
+    festivalsController.updateFestivalById(req, res)
+});
 
 
 app.get("/festivals", (req, res) => {
@@ -27,6 +36,7 @@ app.get("/festivals", (req, res) => {
 app.get("/festform", (req, res) => {
     festivalsController.getFestForm(req, res);
 });
+
 
 app.post("/festform", (req, res) => {
     festivalsController.sendFestData(req, res)

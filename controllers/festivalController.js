@@ -16,6 +16,13 @@ async function getFestivalById(req, res) {
     res.render("festivalDetails", { festival });
 }
 
+async function updateFestivalById(req, res) {
+    const id = req.params.festId;
+    const  festival = await db.getFestivalById(id);
+    res.render("updateItem", {festival})
+    
+}
+
 async function getGenres(req, res) {
     const genres = await db.getAllGenres();
     res.render("genres", { genres });
@@ -32,14 +39,24 @@ async function getFestForm(req, res) {
 }
 
 async function sendFestData(req, res) {
-    const { name, location, date} = req.body;
-    await db.insertNewFest(name, location, date);
+    const { name, location, date, genre_id, image_url} = req.body;
+    console.log(req.body)
+    await db.insertNewFest(name, location, date, genre_id, image_url);
     res.redirect("/");
+}
+
+async function sendUpdFest(req, res) {
+    const id = req.params.festId
+    const { name, location, date, genre_id, image_url } = req.body
+    await db.putNewFest(name, location, date, genre_id, image_url, id);
+    res.redirect(`/${id}`)
 }
 
 
 
 module.exports = {
+    sendUpdFest,
+    updateFestivalById,
     sendFestData,
     getFestForm,
     getFestivals,

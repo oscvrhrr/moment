@@ -40,7 +40,6 @@ async function getFestForm(req, res) {
 
 async function sendFestData(req, res) {
     const { name, location, date, genre_id, image_url} = req.body;
-    console.log(req.body)
     await db.insertNewFest(name, location, date, genre_id, image_url);
     res.redirect("/");
 }
@@ -52,9 +51,16 @@ async function sendUpdFest(req, res) {
     res.redirect(`/${id}`)
 }
 
+async function deleteRecord(req, res) {
+    const { festId } = req.params;
+    await db.deleteFest(festId)
+    res.redirect("/");
+}
+
 
 
 module.exports = {
+    deleteRecord,
     sendUpdFest,
     updateFestivalById,
     sendFestData,

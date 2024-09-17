@@ -24,6 +24,10 @@ app.post("/:festId/updateItem/new", (req, res) => {
     festivalsController.sendUpdFest(req, res);
 });
 
+app.post("/:festId/delete", (req, res) => {
+    festivalsController.deleteRecord(req, res)
+})
+
 app.get("/:festId/updateItem", (req, res) => {
     festivalsController.updateFestivalById(req, res)
 });
@@ -42,13 +46,8 @@ app.post("/festform", (req, res) => {
     festivalsController.sendFestData(req, res)
 })  
 
-
-
 app.use("/genres", genresRouter );
 app.use("/", indexRouter);
-
-
-
 
 
 app.listen(4001, () => {

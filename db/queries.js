@@ -12,7 +12,6 @@ async function getFestivalsAlphaSorted() {
 
 async function getFestivalById(id) {
     const { rows } = await pool.query("SELECT * FROM festivals WHERE id = $1", [id]);
-    console.log(rows)
     return rows
 }
 
@@ -23,7 +22,6 @@ async function getAllGenres() {
 
 async function getGenreById(id) {
     const { rows } = await pool.query("SELECT * FROM festivals WHERE genre_id = $1", [id])
-    console.log(rows)
     return rows
 }
 
@@ -36,8 +34,14 @@ async function putNewFest(name, location, date, genre_id, image_url, id) {
     
 }
 
+async function deleteFest(id) {
+    await pool.query("DELETE FROM festivals WHERE id = $1", [id]);
+    
+}
+
 
 module.exports = {
+    deleteFest,
     putNewFest,
     insertNewFest,
     getAllFestivals,

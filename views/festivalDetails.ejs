@@ -32,9 +32,11 @@
                 <h2 class="lg:text-6xl lg:mt-10"><%= fest.name  %></h2>
                 <p class="lg:text-xl lg:mt-4"><%= fest.location %></p>
                 <p><span class="font-bold">Date:</span> <%=fest.start_date%></p>
-                <div class="mt-8">
-                    <a href="/<%= fest.id %>/updateItem" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out">edit</a>
-                    <a href="" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out">delete</a>
+                <div class="mt-8 flex">
+                    <a href="/<%= fest.id %>/updateItem" class="mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out">edit</a>
+                    <form action="/<%= fest.id %>/delete" method="POST">
+                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out">delete</button>
+                    </form>
                 </div>
             <% }) %>
         </aside>

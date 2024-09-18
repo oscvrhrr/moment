@@ -10,10 +10,4 @@ indexRouter.get("/", (req, res) => {
 });
 
 
-indexRouter.get("/:id", (req, res) => {
-    festivalsController.getFestivalById(req, res)
-})
-
-
-
 module.exports = indexRouter;

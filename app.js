@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const path = require("node:path");
 
+
+const festivalsRouter = require("./routes/festivalsRouter");
 const genresRouter = require("./routes/genresRouter")
 const indexRouter = require("./routes/indexRouter");
 
@@ -16,39 +18,23 @@ app.set("view engine", "ejs");
 
 // parses the req.body
 app.use(express.static("public"));
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.get('/favicon.ico', (req, res) => res.status(204));
 
 
-app.post("/:festId/updateItem/new", (req, res) => {
-    festivalsController.sendUpdFest(req, res);
-});
-
-app.post("/:festId/delete", (req, res) => {
-    festivalsController.deleteRecord(req, res)
-})
-
-app.get("/:festId/updateItem", (req, res) => {
-    festivalsController.updateFestivalById(req, res)
-});
-
-
-app.get("/festivals", (req, res) => {
-    festivalsController.getSortedFestivals(req,res)
-});
-
-app.get("/festform", (req, res) => {
+app.get("/add-fest", (req, res) => {
     festivalsController.getFestForm(req, res);
 });
 
-
-app.post("/festform", (req, res) => {
+app.post("/add-fest", (req, res) => {
     festivalsController.sendFestData(req, res)
 })  
 
 app.use("/genres", genresRouter );
-app.use("/", indexRouter);
 
+app.use("/festivals", festivalsRouter);
+
+app.use("/", indexRouter);
 
 app.listen(4001, () => {
     console.log("running on port 4001")

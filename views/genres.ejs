@@ -16,7 +16,7 @@
           <a href="/">Home</a>
           <a href="/festivals">All Festivals</a>
           <a href="/genres">All Genres</a>
-          <a href="/festform">Add Festival</a>
+          <a href="/add-fest">Add Festival</a>
         </ul>
       </nav>
       <section class="lg:py-24 lg:px-32">
@@ -27,7 +27,7 @@
         </h1>
         <div class="lg:flex lg:flex-wrap lg:px-12">
           <% genres.forEach((genre) => { %>
-             <a class="bg-red-400 lg:w-60 lg:h-24 lg:flex lg:justify-center lg:items-center lg:rounded-full hover:transition ease-in hover:-translate-y-1 hover:scale-110 duration-300 m-4" href="/genres/<%= genre.id %>"><%= genre.genre %></a>
+             <a href="/genres/<%= genre.id %>" class="bg-red-400 lg:w-60 lg:h-24 lg:flex lg:justify-center lg:items-center lg:rounded-full hover:transition ease-in hover:-translate-y-1 hover:scale-110 duration-300 m-4" ><%= genre.genre %></a>
           <% }) %>
         </div>
       </section>

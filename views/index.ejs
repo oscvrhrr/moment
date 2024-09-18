@@ -14,7 +14,7 @@
                 <a href="/">Home</a>
                 <a href="/festivals">All Festivals</a>
                 <a href="/genres">All Genres</a>
-                <a href="/festform">Add Festival</a>
+                <a href="/add-fest">Add Festival</a>
             </ul>
         </nav>
         <section class="lg:w-full lg:h-[47rem] lg:bg-hero lg:flex lg:justify-center lg:items-center">
@@ -27,7 +27,7 @@
         <% festivals.forEach((festival) => { %>
 
             <figure class="lg:w-64 lg:h-80 lg:mx-4 lg:my-10 ">
-                <a href="<%=festival.id %>">
+                <a href="/festivals/<%= festival.id %>">
                     <img class="lg:w-64 lg:h-80 lg:rounded-lg hover:transition ease-in hover:-translate-y-1 hover:scale-110 duration-300" src="<%= festival.image_url %>" alt="">
                 </a>
                <div class="py-2">

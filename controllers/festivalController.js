@@ -11,13 +11,13 @@ async function getSortedFestivals(req, res) {
 }
 
 async function getFestivalById(req, res) {
-    const id = req.params.id;
+    const id = req.params.festID;
     const festival = await db.getFestivalById(id);
-    res.render("festivalDetails", { festival });
+    res.render("festivalDetails", { festival })
 }
 
 async function updateFestivalById(req, res) {
-    const id = req.params.festId;
+    const id = req.params.festID;
     const  festival = await db.getFestivalById(id);
     res.render("updateItem", {festival})
     
@@ -40,20 +40,22 @@ async function getFestForm(req, res) {
 
 async function sendFestData(req, res) {
     const { name, location, date, genre_id, image_url} = req.body;
-    await db.insertNewFest(name, location, date, genre_id, image_url);
+    const numericGenre = Number(genre_id)
+    await db.insertNewFest(name, location, date, numericGenre, image_url);
     res.redirect("/");
 }
 
 async function sendUpdFest(req, res) {
-    const id = req.params.festId
+    const id = req.params.festID
     const { name, location, date, genre_id, image_url } = req.body
-    await db.putNewFest(name, location, date, genre_id, image_url, id);
-    res.redirect(`/${id}`)
+    const numericGenre = Number(genre_id)
+    await db.putNewFest(name, location, date, numericGenre, image_url, id);
+    res.redirect(`/festivals/${id}`)
 }
 
 async function deleteRecord(req, res) {
-    const { festId } = req.params;
-    await db.deleteFest(festId)
+    const id = Number(req.params.festID);
+    await db.deleteFest(id);
     res.redirect("/");
 }
 

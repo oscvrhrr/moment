@@ -15,7 +15,7 @@
           <a href="/">Home</a>
           <a href="/festivals">All Festivals</a>
           <a href="/genres">All Genres</a>
-          <a href="/festform">Add Festival</a>
+          <a href="/add-fest">Add Festival</a>
         </ul>
       </nav>
     <main class="lg:flex lg:px-20 lg:py-20">
@@ -33,8 +33,8 @@
                 <p class="lg:text-xl lg:mt-4"><%= fest.location %></p>
                 <p><span class="font-bold">Date:</span> <%=fest.start_date%></p>
                 <div class="mt-8 flex">
-                    <a href="/<%= fest.id %>/updateItem" class="mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out">edit</a>
-                    <form action="/<%= fest.id %>/delete" method="POST">
+                    <a href="/festivals/<%= fest.id %>/updateItem" class="mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out">edit</a>
+                    <form method="post" action="/festivals/<%= fest.id %>/delete">
                         <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out">delete</button>
                     </form>
                 </div>

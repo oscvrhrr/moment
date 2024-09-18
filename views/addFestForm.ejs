@@ -13,11 +13,11 @@
             <a href="/">Home</a>
             <a href="/festivals">All Festivals</a>
             <a href="/genres">All Genres</a>
-            <a href="/festform">Add Festival</a>
+            <a href="/add-fest">Add Festival</a>
         </ul>
     </nav>
     <main class="lg:flex lg:justify-center items-center lg:pt-24">
-        <form  method="POST" action="/festform" class="lg:h-[26rem] lg:w-[23rem] lg:border-slate-600 lg:border lg:rounded lg:py-8 px-6 ">
+        <form  method="POST" action="/add-fest" class="lg:h-[26rem] lg:w-[23rem] lg:border-slate-600 lg:border lg:rounded lg:py-8 px-6 ">
             <h3 class="lg:text-center lg:text-2xl">Add a festival</h3>
             <div class="lg:flex lg:flex-col">
                 <label for="name">Festival</label>
@@ -43,7 +43,7 @@
                     <option  value="13" selected>Multi-genre</option>
                 </select>
                 <label for="image_url">URL for image</label>
-                <input class="border rounded" type="" name="image_url" id="image_url">
+                <input class="border rounded" type="url" name="image_url" id="image_url" required>
                 <button class="bg-orange-300 rounded mt-4">SUBMIT</button>
             </div>
         </form>

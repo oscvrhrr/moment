@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="/css/output.css">
     <title>Document</title>
 </head>
-<body>
-    <nav class="lg:h-20 lg:w-screen lg:flex lg: items-center lg:justify-between bg-zinc-900 text-orange-300 fixed z-10">
+<body class="bg-orange-900">
+    <nav class="lg:h-16 lg:w-screen lg:flex lg: items-center lg:justify-between text-gray-100 fixed z-10 border-b border-orange-800">
         <p class="ml-24">moment</p>
         <ul class="lg:flex lg:justify-around lg:items-center lg:w-1/3 lg:h-20 lg:mr-16">
             <a href="/">Home</a>
@@ -21,7 +21,7 @@
         
         
     <% festival.forEach((fest) => { %>
-        <form  method="POST" action="/festivals/<%= fest.id %>/updateItem" class="lg:h-[26rem] lg:w-[23rem] lg:border-slate-600 lg:border lg:rounded lg:py-8 px-6 ">
+        <form  method="POST" action="/festivals/<%= fest.id %>/updateItem" class="lg:h-[35rem] bg-white lg:w-4/12 lg:border-slate-600 lg:border lg:rounded lg:py-8 px-6 ">
         <% }) %>
                 <h3 class="lg:text-center lg:text-2xl">Edit festival</h3>
                 <div class="lg:flex lg:flex-col">
@@ -51,7 +51,7 @@
                         </select>
                         <label for="image_url">URL for image</label>
                         <input value="<%= fest.image_url  %>" class="border rounded" type="" name="image_url" id="image_url">
-                        <button type="submit" class="bg-orange-300 rounded">SUBMIT</button>
+                        <button type="submit" class="bg-blue-500 rounded">Edit festival</button>
                 <% }) %>
                 </div>
         </form>

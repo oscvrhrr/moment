@@ -7,22 +7,22 @@
     <title>Home | moment</title>
 </head>
 <body class="bg-orange-900">
-    <header class="lg:w-full lg:h-[43rem] lg:bg-hero lg:flex lg:justify-center lg:items-center lg:flex-col">
-        <nav class="lg:h-20 lg:w-screen lg:flex lg: items-center lg:justify-between text-zinc-300 z-10 absolute top-0">
+    <header class="lg:w-full  lg:h-[43rem] lg:bg-hero lg:flex lg:justify-center lg:items-center lg:flex-col">
+        <nav class="lg:bg-black/50 lg:h-16 lg:w-screen lg:flex lg: items-center lg:justify-between text-gray-100 z-10 absolute top-0">
             <p class="ml-24">moment</p>
             <ul class="lg:flex lg:justify-around lg:items-center lg:w-1/3 lg:h-20 lg:mr-16">
-                <a class="hover:bg-zinc-900/35 hover:transition ease-in py-1 px-2 rounded"  href="/">Home</a>
-                <a class="hover:bg-zinc-900/35 hover:transition ease-in py-1 px-2 rounded"  href="/festivals">All Festivals</a>
-                <a class="hover:bg-zinc-900/35 hover:transition ease-in py-1 px-2 rounded"  href="/genres">All Genres</a>
-                <a class="hover:bg-zinc-900/35 hover:transition ease-in py-1 px-2 rounded"  href="/add-fest">Add Festival</a>
+                <a class="hover:bg-zinc-500/35 hover:transition ease-in py-1 px-2 rounded"  href="/">Home</a>
+                <a class="hover:bg-zinc-500/35 hover:transition ease-in py-1 px-2 rounded"  href="/festivals">All Festivals</a>
+                <a class="hover:bg-zinc-500/35 hover:transition ease-in py-1 px-2 rounded"  href="/genres">All Genres</a>
+                <a class="hover:bg-zinc-500/35 hover:transition ease-in py-1 px-2 rounded"  href="/add-fest">Add Festival</a>
             </ul>
         </nav>
         <section class="">
-            <h1 class="lg:text-7xl text-slate-50">moment</h1>
+            <h1 class="lg:text-7xl text-gray-100">moment</h1>
         </section>
     </header>
     
-    <h2 class="lg:text-7xl bg-gradient-to-r from-yellow-400 to-violet-600 bg-clip-text text-transparent text-center pt-20">Our curated top list</h2>
+    <h2 class="lg:text-7xl bg-gradient-to-r from-gray-100 to-violet-600 bg-clip-text text-transparent text-center pt-20 lg:w-fit m-auto">Our curated top list</h2>
     <main class="lg:flex lg:flex-wrap lg:px-32 lg:pb-20 lg:drop-shadow-xl">
         <% festivals.forEach((festival) => { %>
 
@@ -31,8 +31,8 @@
                     <img class="lg:w-64 lg:h-80 lg:rounded-lg hover:transition ease-in hover:-translate-y-1 hover:scale-105 hover:shadow-xl duration-300" src="<%= festival.image_url %>" alt="">
                 </a>
                <div class="py-2">
-                   <p class="text-zinc-100"><%= festival.name %></p>
-                   <p class="text-zinc-400"><%= festival.location  %></p>
+                   <p class="text-gray-50"><%= festival.name %></p>
+                   <p class="text-gray-300"><%= festival.location  %></p>
                </div>
             </figure>
        <% }) %>

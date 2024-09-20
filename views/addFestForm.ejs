@@ -7,7 +7,7 @@
     <title>Add Festival | moment</title>
 </head>
 <body class="bg-orange-900">
-    <nav class="lg:h-20 lg:w-screen lg:flex lg: items-center lg:justify-between z-10 text-zinc-300">
+    <nav class="lg:h-16 lg:w-screen lg:flex lg: items-center lg:justify-between z-10 text-gray-100 border-b border-orange-800">
         <p class="ml-24">moment</p>
         <ul class="lg:flex lg:justify-around lg:items-center lg:w-1/3 lg:h-20 lg:mr-16">
             <a class="hover:bg-orange-800 hover:transition ease-in p-1 rounded" href="/">Home</a>
@@ -17,8 +17,8 @@
         </ul>
     </nav>
     <main class="lg:flex lg:justify-center items-center lg:pt-24">
-        <form  method="POST" action="/add-fest" class="lg:h-[26rem] lg:w-[23rem] lg:border-slate-600 lg:border lg:rounded lg:py-8 px-6 ">
-            <h3 class="lg:text-center lg:text-2xl">Add a festival</h3>
+        <form  method="POST" action="/add-fest" class="lg:h-[35rem] bg-white lg:w-4/12 r text-gray-800 lg:border-slate-600 lg:border lg rounded-lg lg:py-8 px-6 ">
+            <h3 class="lg:text-center lg:text-2xl">Add festival</h3>
             <div class="lg:flex lg:flex-col">
                 <label for="name">Festival</label>
                 <input class="border rounded" type="text" name="name" id="name" required>
@@ -43,8 +43,8 @@
                     <option  value="13" selected>Multi-genre</option>
                 </select>
                 <label for="image_url">URL for image</label>
-                <input class="border rounded" type="url" name="image_url" id="image_url" required>
-                <button class="bg-orange-300 rounded mt-4">SUBMIT</button>
+                <input class="border rounded " type="url" name="image_url" id="image_url" required>
+                <button class="bg-blue-400 rounded mt-4">Add Festival</button>
             </div>
         </form>
     </main>

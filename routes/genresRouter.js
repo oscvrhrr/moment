@@ -9,7 +9,6 @@ genresRouter.get(("/"), (req, res) => {
 })
 
 genresRouter.get("/:genreID", (req, res) => {
-    console.log('genreID route')
     festivalsController.createGetGenreId(req,res);
 });
 
